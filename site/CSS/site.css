@@ -1,0 +1,299 @@
+@font-face {
+    font-family: Liberation-Serif ;
+    src: url(LiberationSerif.ttf) format(truetype); 
+}
+
+body { animation: fadeIn 1s ease-in-out;}  /* effet du début fond noir to transparent */
+
+@keyframes fadeIn {
+    from { opacity: 0;} /* 0/100% */
+    to { opacity: 1;} /* 100/100% */
+}
+
+* {          /* tout */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {overflow-x: hidden;}     /* cacher ce qui dépasse */ 
+
+.container {
+    height: 100vh;
+    background-color: #E6E6E6;
+    font-family: sans-serif;
+}
+
+.fond {
+    height: 90%;
+    background: url(fondgris.png) no-repeat;
+    background-size: cover;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh ;                       /* gerer la profondeur */
+    padding-bottom: 3vh;
+    gap: 1.56vw;                           /* gerer l'écart entre les titres */ 
+}
+
+header>*{ transform: translateX(2.60vw); }
+
+.titre1,
+.titre3{
+    height: 5.10vh;
+    width: auto;
+    transition: all 0.3s; 
+}
+
+.titre2{
+    height: 8.17vh;
+    width: auto;
+}
+
+.titre1:hover{ transform: scale(1.05) }
+.titre3:hover{ transform: scale(1.05) }
+
+/*-------------------------------------------------------------------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+}
+
+.box-text > h2 {
+    font-size: 1.5em;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    font-family: Liberation-Serif
+}
+
+.box-text2 {
+    font-size: 1.5em;
+    width: 720px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: .2cap solid #000000;
+    padding: 3%;
+    text-shadow: 1px 1px 12px rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+    font-family: Liberation-Serif
+}
+
+.img-decouvrir {
+    width: 75%; 
+    margin-top: 3vh;
+    transition: all 0.3s;  
+}
+
+.img-decouvrir:hover { transform: scale(1.05) }     /* effet zoom */
+
+.box-gauche > img,
+.box-droite > img {
+    width: 19vw;
+    transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out; /* effet smooth */
+}
+
+.box-gauche > img:hover,
+.box-droite > img:hover { transform: scale(1.05) rotate(2deg); } /* zoom de 5% et rotation de 2dg = effet curseur */
+
+/*-------------------------------------------------------------------------------------*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: auto;
+}
+
+footer > a > img { width: 3.38vw; }
+
+footer > a { margin-right: 1.04vw;}      /* espace entre les images */
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1335px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    header {
+        width: 100vw;
+        height: 15vh;
+    }    
+    .box-text2 {
+        font-size: 1.51em;
+        width: 86vw;
+        height: auto;
+    }
+    .img-decouvrir {
+        width: 80%; 
+        height: auto;
+        margin-top: 5vh;
+        margin-bottom: 4%;
+    }
+    .box-gauche > img,
+    .box-droite > img {
+        display: none;
+    }
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 929px) {
+    .box-text2 {
+        font-size: 1.3em;
+        width: 80vw;
+        margin-bottom: 5vh;
+    }
+    .img-decouvrir {
+        width: 80%; 
+        height: auto;
+        margin-top: 4%;
+    }
+    footer > a > img { width: 5.5vw; }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 811px) {
+    .titre1,
+    .titre3{
+    height: 4vh;
+    width: auto;
+    }
+    .titre2{
+    height: 7vh;
+    width: auto;
+    }
+    .box-text > h2 {
+        font-size: 1.4em;
+    }
+    .img-decouvrir {
+        width: 80%; 
+        height: auto;
+        margin-top: 4%;
+    }
+    .box-gauche > img,
+    .box-droite > img {
+        display: none;
+    }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 674px) {
+    .titre1,
+    .titre3{
+    height: 3vh;
+    width: auto;
+    }
+    .titre2{
+    height: 6vh;
+    width: auto;
+    }
+    .box-text2 {
+        font-size: 1.2em;
+        margin-bottom: 2vh;
+    }
+    .img-decouvrir {
+        width: 70%; 
+        margin-top: 10%;
+    }
+    footer > a > img { width: 8vw; }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 535px) {
+    .titre1,
+    .titre3{
+        height: 2.2vh;
+        width: auto;
+    }
+    .box-text > h2 {
+        margin-top: 1vh;
+    }
+    .box-text2 {
+        font-size: 1.2em;
+        width: 80vw;
+        margin-bottom: 2vh;
+    }
+    .img-decouvrir {
+        margin-top: 4%;
+    }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 430px) {
+    header>*{ transform: translateX(0vw); }
+    .titre1,
+    .titre3{
+        height: 1.8vh;
+        width: auto;
+    }
+    .titre2{
+        height: 6vh;
+        width: auto;
+        }
+    .box-text > h2 {
+        margin-top: 1vh;
+        font-size: 1.2em;
+    }
+    .box-text2 {
+        font-size: 1.1em;
+        width: 85vw;
+        margin-bottom: 2vh;
+    }
+    .img-decouvrir {
+        margin-top: 3%;
+        width: 50%; 
+    }
+    footer > a > img { width: 13vw; }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 390px) {
+    .box-text2 {
+        font-size: 1.05em;
+        width: 90vw;
+        margin-bottom: 2vh;
+    }
+} 
+
+/*-------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 375px) {
+    .box-text > h2 {
+        margin-top: 0.9vh;
+        font-size: 1.1em;
+    }
+    .box-text2 {
+        font-size: 0.88em;
+    }
+    .img-decouvrir {
+        width: 50%;
+    }
+} 
+
